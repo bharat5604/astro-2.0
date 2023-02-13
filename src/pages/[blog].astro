@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro"
+export function getStaticPaths() {
+  return [
+    {params: {blog: 'clifford'}},
+    {params: {blog: 'rover'}},
+    {params: {blog: 'spot'}},
+  ];
+}
+const { blog } = Astro.params;
+---
+
+<Layout title={`dynamic ${blog}`}>
+    <main>
+        <h1>Hi {blog}</h1>
+    </main>
+</Layout>

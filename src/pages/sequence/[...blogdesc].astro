@@ -1,0 +1,18 @@
+---
+import Layout from "../../layouts/Layout.astro"
+export function getStaticPaths(){
+    return [
+          {params: {path: 'one/two/three'}},
+          {params: {path: 'four'}},
+          {params: {path: undefined }}
+    ]
+}
+const { path } = Astro.params;
+---
+
+
+<Layout title="description">
+    <main>
+        <h1>testing {path}</h1>
+    </main>
+</Layout>
